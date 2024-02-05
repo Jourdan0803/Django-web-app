@@ -1,0 +1,128 @@
+{% extends 'layout.html' %}
+
+{% block content%}
+<div class="container">
+    <!-- <h1>driver order info</h1> -->
+    <hr class="featurette-divider" style = "margin-top: 40px;">
+    <div class="card">
+      <div class="card-header text-center">
+          <h5 style = "margin-left: 10px; margin-top: 15px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-card-text" viewBox="0 0 16 16">
+                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
+                <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8m0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5"/>
+              </svg>
+                <span style = "margin-left: 10px;">Order Detail (Drivers' version)</span> 
+          </h5>
+    </div>
+    <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="post">
+        {% csrf_token %}
+
+        <!-- {% for obj in queryset %}
+            <input type="text" value="Disabled readonly input" aria-label="Disabled input example" disabled readonly>
+            {{obj.label}}: {{obj}}
+        {% endfor %} -->
+        <div class="px-md-5 mb-3">
+            <label for="location" class="form-label">Costumer's Username:</label>
+            <input type="text" class="form-control" id="order_owner" name="order_owner" aria-label="Disabled input example" disabled readonly value= {{obj.order_owner}}>
+        </div>
+        <div class="px-md-5 mb-3">
+          <label for="location" class="form-label">Costumer's Location:</label>
+          <input type="text" class="form-control" id="location" name="location" aria-label="Disabled input example" disabled readonly value= "{{obj.location}}">
+        </div>
+        <div class="px-md-5 mb-3">
+          <label for="dest" class="form-label">Costumer's destination:</label>
+          <input type="text" class="form-control" id="dest" aria-label="Disabled input example" disabled readonly name="destination" value="{{obj.destination}}">
+        </div>
+        <div class="px-md-5 mb-3">
+            <label for="date" class="form-label">Ride Date:</label>
+            <input type="date" class="form-control" id="date" aria-label="Disabled input example" disabled readonly name="date" value={{obj.date}}>
+        </div>
+        <div class="px-md-5 mb-3">
+            <label for="time" class="form-label">Departure Time:</label>
+            <input type="time" class="form-control" id="time" aria-label="Disabled input example" disabled readonly name="time" value={{obj.time}}>
+        </div>
+        <div class="px-md-5 mb-3">
+            <label for="time" class="form-label">Earliest Acceptable Departure Time:</label>
+            <input type="time" class="form-control" id="time" aria-label="Disabled input example" disabled readonly name="time_earlist" value={{obj.time_earlist}}>
+        </div>
+        <div class="px-md-5 mb-3">
+            <label for="time" class="form-label">Latest Acceptable Departure Time:</label>
+            <input type="time" class="form-control" id="time" aria-label="Disabled input example" disabled readonly name="time_latest" value={{obj.time_latest}}>
+        </div>
+        <div class="px-md-5 mb-3">
+            <label for="owner_num" class="form-label">Total Passengers Number::</label>
+            <input type="int" class="form-control" id="owner_num" aria-label="Disabled input example" disabled readonly name="owner_num" value={{obj.owner_num}}>
+        </div>
+
+        <div class="px-md-5 mb-3">
+            <label for="type" class="form-label">Desired Vehicle Type:</label>
+            <input type="text" class="form-control" id="vehicle_type" aria-label="Disabled input example" disabled readonly name="vehicle_type" value={{obj.vehicle_type}}>
+        </div>
+        <div class="px-md-5 mb-3">
+            <label for="share" class="form-label">Is This Ride Sharable:</label>
+            <input type="int" class="form-control" id="share" aria-label="Disabled input example" disabled readonly name="share" value={{obj.is_share}}>
+        </div>
+        {% if obj.is_share == True%}
+        <div class="px-md-5 mb-3">
+            <label for="share_user" class="form-label">Who will share this ride:</label>
+            <input type="int" class="form-control" id="share_user" aria-label="Disabled input example" disabled readonly name="share_user" value={{obj.share_user}}>
+        </div>
+        <div class="px-md-5 mb-3">
+            <label for="share_num" class="form-label">How many people will join in with the sharer?</label>
+            <input type="int" class="form-control" id="share_num" aria-label="Disabled input example" disabled readonly name="share_num" value={{obj.share_num}}>
+        </div>
+        {% endif %}
+
+
+        <div class="px-md-5 mb-3">
+            <label for="info" class="form-label">Special Order Info(optional):</label>
+            <input type="text" class="form-control" id="info" aria-label="Disabled input example" disabled readonly name="info" value="{{obj.info}}">
+        </div>
+
+
+
+
+        {% if obj.is_confirm == False %}
+        <div class="bd-example-snippet px-md-5 mb-3 bd-code-snippet"><div class="bd-example m-0 border-0">
+            <hr class="featurette-divider" style = "margin-top: 20px;">
+            <span style = "margin-left: 500px;">Ride Status</span> 
+            <div class="progress " role="progressbar" aria-label="Success striped example" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar progress-bar-striped bg-warning" style="width: 33.3%">Waiting for confirm</div>
+            </div>
+            </div>
+            <hr class="featurette-divider" style = "margin-top: 20px;">
+
+        <div class="px-md-5 mb-3 d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-success me-md-2" type="submit" id= "confirm" name="confirm">Confirm</button>
+            <a href="/driver/search">
+            <button class="btn btn-primary" type="button">Cancel</button>
+            </a>
+        </div>
+        {% elif obj.status == "confirmed" %}
+        <div class="bd-example-snippet px-md-5 mb-3 bd-code-snippet"><div class="bd-example m-0 border-0">
+            <hr class="featurette-divider" style = "margin-top: 20px;">
+            <span style = "margin-left: 500px;">Ride Status</span> 
+            <div class="progress " role="progressbar" aria-label="Success striped example" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar progress-bar-striped bg-success" style="width: 66.6%">Driver confirmed</div>
+            </div>
+            </div>
+            <hr class="featurette-divider" style = "margin-top: 20px;">
+
+        <div class="px-md-5 mb-3 d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-success me-md-2" type="submit" id= "complete" name="complete">Complete</button>
+            <a href="/driver/list">
+            <button class="btn btn-secondary" type="button">Cancel</button>
+            </a>
+        </div>
+        {% else %}
+        <div class=" px-md-5 mb-3d-grid gap-2 d-md-flex justify-content-md-end">
+            <a href="/driver/list">
+            <button class="btn btn-secondary" type="button">Cancel</button>
+            </a>
+        </div>
+        {% endif %}
+      </form>
+
+</div>
+
+{% endblock %}

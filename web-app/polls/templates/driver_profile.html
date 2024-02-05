@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+{% block content%}
+<div class="container">
+      <h1></h2>
+    <hr class="featurette-divider">
+<form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="post" novalidate>
+    {% csrf_token %}
+    <div class="px-md-5 mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Username</label>
+        <div class="input-group mb-3">
+            <input type="text"  name = "username" class="form-control" value={{ob.username}} aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="submit"  name = "edit_username" id="button-addon2">Edit</button>
+        </div>
+        <div id="emailHelp" style ="color: blue;"class="form-text">{{meg}}</div>
+        <div id="emailHelp" style ="color: red;"class="form-text">{{error_meg}}</div>
+    </div>
+    <div class="px-md-5 mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Email</label>
+      <div class="input-group mb-3">
+          <input type="text"  name = "email" class="form-control" value={{ob.email}} aria-describedby="button-addon2">
+          <button class="btn btn-outline-secondary" type="submit"  name = "edit_email" id="button-addon2">Edit</button>
+      </div>
+      <div id="emailHelp" style ="color: blue;"class="form-text">{{meg5}}</div>
+      <div id="emailHelp" style ="color: red;"class="form-text">{{error_meg3}}</div>
+  </div>
+    <div class="px-md-5 mb-3">
+        <label for="exampleInputText1"  class="form-label">Vehicle type</label>
+        <div class="input-group mb-3">
+          <select class="form-select"  name = "type" value={{ob.vehicle_type}} aria-label="Default select example">
+            <option value = {{ob.vehicle_type}} selected> {{ob.vehicle_type}}
+            </option>
+                  <option value="Car">Car</option>
+                  <option value="Van">Van</option>
+                  <option value="Bus">Bus</option>
+                  <option value="Truck">Truck</option>
+          </select>
+            <!-- <input type="text"  name = "type"  class="form-control" placeholder="Recipient's username" value={{ob.vehicle_type}} aria-describedby="button-addon2"> -->
+            <button class="btn btn-outline-secondary" type="submit"  name = "edit_vehicle_type" id="button-addon2">Edit</button>
+        </div>
+        <div id="emailHelp" style ="color: blue;"class="form-text">{{meg1}}</div>
+        <div id="emailHelp" style ="color: red;"class="form-text">{{error_meg1}}</div>
+      </div>
+      <div class="px-md-5 mb-3">
+        <label for="exampleInputText1" class="form-label">Driver license</label>
+        <div class="input-group mb-3">
+            <input type="text" name = "license"  class="form-control" placeholder="Recipient's username" value={{ob.driver_license}} aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="submit"   name = "edit_driver_license" id="button-addon2">Edit</button>
+        </div>
+        <div id="emailHelp" style ="color: blue;"class="form-text">{{meg2}}</div>
+      </div>
+      <div class="px-md-5 mb-3">
+        <label for="exampleInputText1" class="form-label">Number of seats</label>
+        <div class="input-group mb-3">
+            <input type="text"  name = "seats" class="form-control" placeholder="Recipient's username" value={{ob.seats_num}} aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="submit"   name = "edit_seats_num" id="button-addon2">Edit</button>
+        </div>
+        <div id="emailHelp" style ="color: blue;"class="form-text">{{meg3}}</div>
+      </div>
+      <div class="px-md-5 mb-3">
+        <label for="exampleInputText1" class="form-label">Special information</label>
+        <div class="input-group mb-3">
+            <input type="text" name = "info" class="form-control" placeholder="Enter your special information" value={{ob.special_info}} >
+            <button class="btn btn-outline-secondary" type="submit"   name = "edit_special_info" id="button-addon2">Edit</button>
+        </div>
+        <div id="emailHelp" style ="color: blue;"class="form-text">{{meg4}}</div>
+      </div>
+      <a href="/users/home">
+        <button type="button" class="btn btn-primary position-absolute top-180 start-50">back to home</button>
+      </a>
+    </div>
+
+</form>
+
+{% endblock %}

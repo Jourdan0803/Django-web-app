@@ -1,0 +1,379 @@
+{% extends 'layout.html' %}
+
+{% block content%}
+<div class="container">
+    <!-- <h1>users order info</h1> -->
+    <hr class="featurette-divider" style = "margin-top: 40px;">
+    <div class="card">
+      <div class="card-header text-center">
+          <h5 style = "margin-left: 10px; margin-top: 15px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-card-text" viewBox="0 0 16 16">
+                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
+                <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8m0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5"/>
+              </svg>
+                <span style = "margin-left: 10px;">Order Detail (Users' version)</span> 
+          </h5>
+    </div>
+    <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="post">
+        {% csrf_token %}
+
+        {% if username == obj.order_owner %}
+            {% if obj.is_confirm == True %} 
+                <div class="px-md-5 mb-3">
+                    <div class="alert alert-success" role="alert">
+                        A Driver has confirmed your order, now you can see the driver's information!
+                      </div>
+                    <label for="status" class="form-label">Order Status:</label>
+                    <input type="text" class="form-control" id="status" aria-label="Disabled input example" disabled readonly name="status" value={{obj.status}}>
+                </div>
+
+                <div class="px-md-5 mb-3">
+                    <label for="driver" class="form-label">Your driver's name:</label>
+                    <input type="text" class="form-control" id="driver" name="location" aria-label="Disabled input example" disabled readonly value= {{obj.driver}}>
+                </div>
+                <div class="px-md-5 mb-3">
+                    <label for="driver" class="form-label">The vehicle of this order:</label>
+                    <input type="text" class="form-control" id="driver" name="location" aria-label="Disabled input example" disabled readonly value= {{obj.vehicle_type}}>
+                </div>
+                <div class="px-md-5 mb-3">
+                    <label for="driver" class="form-label">Number of seats of this vehicle:</label>
+                    <input type="text" class="form-control" id="driver" name="location" aria-label="Disabled input example" disabled readonly value= {{obj.seats_num}}>
+                
+                </div>
+                <div class="px-md-5 mb-3">
+                <label for="location" class="form-label">Your Location:</label>
+                <input type="text" class="form-control" id="location" name="location" aria-label="Disabled input example" disabled readonly value= {{obj.location}}>
+                </div>
+                <div class="px-md-5 mb-3">
+                <label for="dest" class="form-label">Your destination:</label>
+                <input type="text" class="form-control" id="dest" aria-label="Disabled input example" disabled readonly name="destination" value={{obj.destination}}>
+                </div>
+                <div class="px-md-5 mb-3">
+                    <label for="date" class="form-label">Ride Date:</label>
+                    <input type="date" class="form-control" id="date" aria-label="Disabled input example" disabled readonly name="date" value={{obj.date}}>
+                </div>
+                <div class="px-md-5 mb-3">
+                    <label for="time" class="form-label">Departure Time:</label>
+                    <input type="time" class="form-control" id="time" aria-label="Disabled input example" disabled readonly name="time" value={{obj.time}}>
+                </div>
+                <div class="px-md-5 mb-3">
+                    <label for="time" class="form-label">Earliest Acceptable Departure Time:</label>
+                    <input type="time" class="form-control" id="time" aria-label="Disabled input example" disabled readonly name="time_earlist" value={{obj.time_earlist}}>
+                </div>
+                <div class="px-md-5 mb-3">
+                    <label for="time" class="form-label">Latest Acceptable Departure Time:</label>
+                    <input type="time" class="form-control" id="time" aria-label="Disabled input example" disabled readonly name="time_latest" value={{obj.time_latest}}>
+                </div>
+                <div class="px-md-5 mb-3">
+                    <label for="owner_num" class="form-label">Total Passengers Number:</label>
+                    <input type="int" class="form-control" id="owner_num" aria-label="Disabled input example" disabled readonly name="owner_num" value={{obj.owner_num}}>
+                </div>
+
+                <div class="px-md-5 mb-3">
+                    <label for="type" class="form-label">Desired Vehicle Type:</label>
+                    <input type="text" class="form-control" id="vehicle_type" aria-label="Disabled input example" disabled readonly name="vehicle_type" value={{obj.vehicle_type}}>
+                </div>
+                <div class="px-md-5 mb-3">
+                    <label for="share" class="form-label">Would you like to share this ride:</label>
+                    <input type="int" class="form-control" id="share" aria-label="Disabled input example" disabled readonly name="share" value={{obj.is_share}}>
+                </div>
+                <div class="px-md-5 mb-3">
+                    <label for="info" class="form-label">Special Order Info(optional):</label>
+                    <input type="text" class="form-control" id="info" aria-label="Disabled input example" disabled readonly name="info" value="{{obj.info}}">
+                </div>
+                {% if obj.is_share == True%}
+                    <div class="px-md-5 mb-3">
+                        <div class="alert alert-primary" role="alert">
+                            Ride sharer information
+                          </div>
+                        <label for="share_user" class="form-label">Who will share this ride:</label>
+                        <input type="int" class="form-control" id="share_user" aria-label="Disabled input example" disabled readonly name="share_user" value={{obj.share_user}}>
+                    </div>
+                    <div class="px-md-5 mb-3">
+                        <label for="share_num" class="form-label">How many people will join in with the sharer?</label>
+                        <input type="int" class="form-control" id="share_num" aria-label="Disabled input example" disabled readonly name="share_num" value={{obj.share_num}}>
+                    </div>
+                {% endif %}
+                {% if obj.status == "complete" %}
+                <div class="bd-example-snippet px-md-5 mb-3 bd-code-snippet"><div class="bd-example m-0 border-0">
+                    <hr class="featurette-divider" style = "margin-top: 20px;">
+                    <span style = "margin-left: 500px;">Ride Status</span> 
+                    <div class="progress " role="progressbar" aria-label="Success striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                      <div class="progress-bar progress-bar-striped" style="width: 100%">Ride completed</div>
+                    </div>
+                    </div>
+                    <hr class="featurette-divider" style = "margin-top: 20px;">
+        
+                    {% else %}
+                <div class="bd-example-snippet px-md-5 mb-3 bd-code-snippet"><div class="bd-example m-0 border-0">
+                    <hr class="featurette-divider" style = "margin-top: 20px;">
+                    <span style = "margin-left: 550px;">Ride Status</span> 
+                    <div class="progress " role="progressbar" aria-label="Success striped example" aria-valuenow="66.6" aria-valuemin="0" aria-valuemax="100">
+                      <div class="progress-bar progress-bar-striped bg-success" style="width: 66.6%">Ride in progress</div>
+                    </div>
+                    </div>
+                    <hr class="featurette-divider" style = "margin-top: 20px;">
+                    {% endif %}
+
+            {% else %}
+                <div class="px-md-5 mb-3">
+                    <label for="status" class="form-label">Order Status:</label>
+                    <input type="text" class="form-control" id="status" aria-label="Disabled input example" disabled readonly name="status" value={{obj.status}}>
+                </div>
+                <div class="px-md-5 mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Your Location:</label>
+                    <div class="input-group mb-3">
+                        <input type="text"  name = "location" class="form-control" value="{{obj.location}}"" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="submit"  name = "edit_location" id="button-addon2">Save</button>
+                    </div>
+                    <div id="emailHelp" style ="color: blue;"class="form-text">{{meg0}}</div>
+                    <div id="emailHelp" style ="color: red;"class="form-text">{{error_meg0}}</div>
+                </div>
+                <div class="px-md-5 mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Your Destination:</label>
+                    <div class="input-group mb-3">
+                        <input type="text"  name = "destination" class="form-control" value="{{obj.destination}}" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="submit"  name = "edit_destination" id="button-addon2">Save</button>
+                    </div>
+                    <div id="emailHelp" style ="color: blue;"class="form-text">{{meg1}}</div>
+                    <div id="emailHelp" style ="color: red;"class="form-text">{{error_meg1}}</div>
+                </div>
+                <div class="px-md-5 mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Ride Date:</label>
+                    <div class="input-group mb-3">
+                        <input type="date"  name = "date" class="form-control" value={{obj.date}} aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="submit"  name = "edit_date" id="button-addon2">Save</button>
+                    </div>
+                    <div id="emailHelp" style ="color: blue;"class="form-text">{{meg2}}</div>
+                    <div id="emailHelp" style ="color: red;"class="form-text">{{error_meg2}}</div>
+                </div>
+                <div class="px-md-5 mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Departure Time:</label>
+                    <div class="input-group mb-3">
+                        <input type="time"  name = "time" class="form-control" value={{obj.time}} aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="submit"  name = "edit_time" id="button-addon2">Save</button>
+                    </div>
+                    <div id="emailHelp" style ="color: blue;"class="form-text">{{meg3}}</div>
+                    <div id="emailHelp" style ="color: red;"class="form-text">{{error_meg3}}</div>
+                </div>
+                <div class="px-md-5 mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Earliest Acceptable Departure Time:</label>
+                    <div class="input-group mb-3">
+                        <input type="time"  name = "time_earlist" class="form-control" value={{obj.time_earlist}} aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="submit"  name = "edit_time_earlist" id="button-addon2">Save</button>
+                    </div>
+                    <div id="emailHelp" style ="color: blue;"class="form-text">{{meg4}}</div>
+                    <div id="emailHelp" style ="color: red;"class="form-text">{{error_meg4}}</div>
+                </div>
+                <div class="px-md-5 mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Latest Acceptable Departure Time:</label>
+                    <div class="input-group mb-3">
+                        <input type="time"  name = "time_latest" class="form-control" value={{obj.time_latest}} aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="submit"  name = "edit_time_latest" id="button-addon2">Save</button>
+                    </div>
+                    <div id="emailHelp" style ="color: blue;"class="form-text">{{meg5}}</div>
+                    <div id="emailHelp" style ="color: red;"class="form-text">{{error_meg5}}</div>
+                </div>
+                <div class="px-md-5 mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Total Passengers Number:</label>
+                    <div class="input-group mb-3">
+                        <input type="text"  name = "owner_num" class="form-control" value={{obj.owner_num}} aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="submit"  name = "edit_owner_num" id="button-addon2">Save</button>
+                    </div>
+                    <div id="emailHelp" style ="color: blue;"class="form-text">{{meg6}}</div>
+                    <div id="emailHelp" style ="color: red;"class="form-text">{{error_meg6}}</div>
+                </div>
+                <div class="px-md-5 mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Desired Vehicle Type:</label>
+                    <div class="input-group mb-3">
+                        <!-- <input type="text"  name = "vehicle_type" class="form-control" value={{obj.vehicle_type}} aria-describedby="button-addon2"> -->
+                        <select class="form-select"  name = "vehicle_type" value={{obj.vehicle_type}} aria-label="Default select example">
+                            <option value = {{obj.vehicle_type}} selected> {{obj.vehicle_type}}
+                            </option>
+                                <option value="Car">Car</option>
+                                <option value="Van">Van</option>
+                                <option value="Bus">Bus</option>
+                                <option value="Truck">Truck</option>
+                        </select>
+                        <button class="btn btn-outline-secondary" type="submit"  name = "edit_vehicle_type" id="button-addon2">Save</button>
+                    </div>
+                    <div id="emailHelp" style ="color: blue;"class="form-text">{{meg7}}</div>
+                    <div id="emailHelp" style ="color: red;"class="form-text">{{error_meg7}}</div>
+                </div>
+                <div class="px-md-5 mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Would you like to share this ride:</label>
+                    <div class="input-group mb-3">
+                        <select class="form-select"  name = "share" aria-label="Default select example">
+                            <option selected>{{ obj.is_share }}</option>
+                            <option value="True">True</option>
+                            <option value="False">False</option>
+                        </select>
+                    <button class="btn btn-outline-secondary" type="submit"  name = "edit_is_share" id="button-addon2">Save</button>
+                    </div>
+                    <div id="emailHelp" style ="color: blue;"class="form-text">{{meg8}}</div>
+                    <div id="emailHelp" style ="color: red;"class="form-text">{{error_meg8}}</div>
+                </div>
+                <div class="px-md-5 mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Special Order Info(optional):</label>
+                    <div class="input-group mb-3">
+                        <input type="text"  name = "info" class="form-control" value="{{obj.info}}">
+                        <button class="btn btn-outline-secondary" type="submit"  name = "edit_info" id="button-addon2">Save</button>
+                    </div>
+                    <div id="emailHelp" style ="color: blue;"class="form-text">{{meg9}}</div>
+                    <div id="emailHelp" style ="color: red;"class="form-text">{{error_meg9}}</div>
+                </div> 
+                {% if obj.is_share == True%}
+                    <div class="px-md-5 mb-3">
+                        <div class="alert alert-primary" role="alert">
+                            Ride sharer information
+                          </div>
+                        <label for="share_user" class="form-label">Who will share this ride:</label>
+                        <input type="int" class="form-control" id="share_user" aria-label="Disabled input example" disabled readonly name="share_user" value={{obj.share_user}}>
+                    </div>
+                    <div class="px-md-5 mb-3">
+                        <label for="share_num" class="form-label">How many people will join in with the sharer?</label>
+                        <input type="int" class="form-control" id="share_num" aria-label="Disabled input example" disabled readonly name="share_num" value={{obj.share_num}}>
+                    </div>
+                {% endif %}
+                <div class="bd-example-snippet px-md-5 mb-3 bd-code-snippet"><div class="bd-example m-0 border-0">
+                    <hr class="featurette-divider" style = "margin-top: 20px;">
+                    <span style = "margin-left: 500px;">Ride Status</span> 
+                    <div class="progress " role="progressbar" aria-label="Success striped example" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+                      <div class="progress-bar progress-bar-striped bg-warning" style="width: 33.3%">Waiting for driver</div>
+                    </div>
+                    </div>
+                    <hr class="featurette-divider" style = "margin-top: 20px;">
+            {% endif %}
+        {% elif username == obj.share_user %}
+        {% if obj.is_confirm == True %} 
+        <div class="px-md-5 mb-3">
+            <div class="alert alert-success" role="alert">
+                A Driver has confirmed your order, now you can see the driver's information!
+              </div>
+            <label for="status" class="form-label">Order Status:</label>
+            <input type="text" class="form-control" id="status" aria-label="Disabled input example" disabled readonly name="status" value={{obj.status}}>
+        </div>
+
+        <div class="px-md-5 mb-3">
+            <label for="driver" class="form-label">Your driver's name:</label>
+            <input type="text" class="form-control" id="driver" name="location" aria-label="Disabled input example" disabled readonly value= {{obj.driver}}>
+        </div>
+        <div class="px-md-5 mb-3">
+            <label for="driver" class="form-label">The vehicle of this order:</label>
+            <input type="text" class="form-control" id="driver" name="location" aria-label="Disabled input example" disabled readonly value= {{obj.vehicle_type}}>
+        </div>
+        <div class="px-md-5 mb-3">
+            <label for="driver" class="form-label">Number of seats of this vehicle:</label>
+            <input type="text" class="form-control" id="driver" name="location" aria-label="Disabled input example" disabled readonly value= {{obj.seats_num}}>
+        
+        </div>
+        {% endif %}
+            <div class="px-md-5 mb-3">
+                <label for="location" class="form-label">Ride Owner's Username:</label>
+                <input type="text" class="form-control" id="order_owner" name="order_owner" aria-label="Disabled input example" disabled readonly value= {{obj.order_owner}}>
+            </div>
+            <div class="px-md-5 mb-3">
+            <label for="location" class="form-label">Ride Owner's Location:</label>
+            <input type="text" class="form-control" id="location" name="location" aria-label="Disabled input example" disabled readonly value= {{obj.location}}>
+            </div>
+            <div class="px-md-5 mb-3">
+            <label for="dest" class="form-label">Ride Owner's destination:</label>
+            <input type="text" class="form-control" id="dest" aria-label="Disabled input example" disabled readonly name="destination" value={{obj.destination}}>
+            </div>
+            <div class="px-md-5 mb-3">
+                <label for="date" class="form-label">Ride Date:</label>
+                <input type="date" class="form-control" id="date" aria-label="Disabled input example" disabled readonly name="date" value={{obj.date}}>
+            </div>
+            <div class="px-md-5 mb-3">
+                <label for="time" class="form-label">Departure Time:</label>
+                <input type="time" class="form-control" id="time" aria-label="Disabled input example" disabled readonly name="time" value={{obj.time}}>
+            </div>
+            <div class="px-md-5 mb-3">
+                <label for="owner_num" class="form-label">Total Passengers Number:</label>
+                <input type="int" class="form-control" id="owner_num" aria-label="Disabled input example" disabled readonly name="owner_num" value={{obj.owner_num}}>
+            </div>
+
+            <div class="px-md-5 mb-3">
+                <label for="type" class="form-label">Desired Vehicle Type:</label>
+                <input type="text" class="form-control" id="vehicle_type" aria-label="Disabled input example" disabled readonly name="vehicle_type" value={{obj.vehicle_type}}>
+            </div>
+            {% if obj.is_share == True%}
+            <div class="px-md-5 mb-3">
+                <label for="share_user" class="form-label">Who will share this ride:</label>
+                <input type="int" class="form-control" id="share_user" aria-label="Disabled input example" disabled readonly name="share_user" value={{obj.share_user}}>
+            </div>
+            {% if obj.is_confirm == True%}
+            <div class="px-md-5 mb-3">
+                <label for="share_num" class="form-label">How many people will join in with the sharer?</label>
+                <input type="int" class="form-control" id="share_user" aria-label="Disabled input example" disabled readonly name="share_num" value={{obj.share_num}}>
+            </div>
+            {%else%}
+            <div class="px-md-5 mb-3">
+            <label for="share_num" class="form-label">How many people will join in with the sharer?</label>
+                <div class="input-group mb-3">
+                    <input type="int" class="form-control" id="share_num" name = "share_num"value={{obj.share_num}}>
+                    <button class="btn btn-outline-secondary" type="submit"  name = "edit_share_num" id="button-addon2">Save</button>
+                </div>
+                <div id="emailHelp" style ="color: blue;"class="form-text">{{meg10}}</div>
+                <div id="emailHelp" style ="color: red;"class="form-text">{{error_meg10}}</div>
+                </div>
+            {% endif %}
+            {% endif %}
+
+
+            <div class="px-md-5 mb-3">
+                <label for="info" class="form-label">Special Order Info(optional):</label>
+                <input type="text" class="form-control" id="info" aria-label="Disabled input example" disabled readonly name="info" value="{{obj.info}}">
+            </div>
+   
+        {% if obj.is_confirm == False %} 
+        <div class="bd-example-snippet px-md-5 mb-3 bd-code-snippet"><div class="bd-example m-0 border-0">
+            <hr class="featurette-divider" style = "margin-top: 20px;">
+            <span style = "margin-left: 500px;">Ride Status</span> 
+            <div class="progress " role="progressbar" aria-label="Success striped example" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar progress-bar-striped bg-warning" style="width: 33.3%">Waiting for driver</div>
+            </div>
+            </div>
+            <hr class="featurette-divider" style = "margin-top: 20px;">
+
+        {% elif obj.status == "complete" %}
+        <div class="bd-example-snippet px-md-5 mb-3 bd-code-snippet"><div class="bd-example m-0 border-0">
+            <hr class="featurette-divider" style = "margin-top: 20px;">
+            <span style = "margin-left: 500px;">Ride Status</span> 
+            <div class="progress " role="progressbar" aria-label="Success striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar progress-bar-striped" style="width: 100%">Ride completed</div>
+            </div>
+            </div>
+            <hr class="featurette-divider" style = "margin-top: 20px;">
+
+            {% else %}
+        <div class="bd-example-snippet px-md-5 mb-3 bd-code-snippet"><div class="bd-example m-0 border-0">
+            <hr class="featurette-divider" style = "margin-top: 20px;">
+            <span style = "margin-left: 550px;">Ride Status</span> 
+            <div class="progress " role="progressbar" aria-label="Success striped example" aria-valuenow="66.6" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar progress-bar-striped bg-success" style="width: 66.6%">Ride in progress</div>
+            </div>
+            </div>
+            <hr class="featurette-divider" style = "margin-top: 20px;">
+            {% endif %}
+            {% endif %}
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            {% if obj.is_confirm == False and username == obj.order_owner%} 
+            <a href="/users/list">
+                <button class="btn btn-secondary" name = "cancel"type="submit">Cancel ride</button>
+                </a>
+            {% elif obj.is_confirm == False and username == obj.share_user%} 
+            <a href="/users/list">
+                <button class="btn btn-secondary" name = "cancel_share"type="submit">Exit sharing</button>
+                </a>
+            {% endif %}
+            <a href="/users/list">
+            <button class="btn btn-primary" type="button">Back To Order List</button>
+            </a>
+        </div>
+      </form>
+
+</div>
+
+{% endblock %}

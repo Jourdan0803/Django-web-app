@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block content%}
+
+        <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="post" novalidate>
+          {% csrf_token %}
+          <div class="px-md-5 mb-3">
+            <label for="exampleInputText1" class="form-label">Username</label>
+            <input class="form-control" type="text" value="{{ username }}" aria-label="readonly input example" readonly>
+            <div id="emailHelp" class="form-text">Username can not be modified here, please go to user profile to modify it.</div>
+          </div>
+          <div class="px-md-5 mb-3">
+              <label for="exampleInputText1"  class="form-label">Vehicle type</label>
+              <div class="input-group mb-3">
+                <select class="form-select"  type = "number" name = "type" aria-label="Default select example">
+                  <option selected>Please choose your vehicle type</option>
+                  <option value="Car">Car</option>
+                  <option value="Van">Van</option>
+                  <option value="Bus">Bus</option>
+                  <option value="Truck">Truck</option>
+                </select>
+                  <!-- <input type="text"  name = "type"  class="form-control" placeholder="Recipient's username" value={{ob.vehicle_type}} aria-describedby="button-addon2"> -->
+              </div>
+              <div id="emailHelp" style ="color: red;"class="form-text">{{error_meg}}</div>
+            </div>
+            <div class="px-md-5 mb-3">
+              <label for="exampleInputText1" class="form-label">Driver license</label>
+              <input type="text" name = "license"  class="form-control" placeholder="Please enter your driver license " aria-describedby="button-addon2">
+              <div id="emailHelp" style ="color: red;"class="form-text">{{error_meg1}}</div>
+            </div>
+            <div class="px-md-5 mb-3">
+              <label for="exampleInputText1" class="form-label">Number of seats</label>
+              <input type="text"  name = "seats" class="form-control" placeholder="Please enter your vehicle's seats number" aria-describedby="button-addon2">
+              <div id="emailHelp" style ="color: red;"class="form-text">{{error_meg2}}</div>
+            </div>
+            <div class="px-md-5 mb-3">
+              <label for="exampleInputText1" class="form-label">Special information</label>
+              <input type="text" name = "info" class="form-control" placeholder="Please enter your special information" aria-describedby="button-addon2">
+            </div>
+          <button class="btn btn-primary position-absolute top-180 start-50" type="submit" value="submit" >Register</button>
+      </form>
+
+{% endblock %}
+            <!-- <input type="text" class="form-control" id="exampleInputText1" aria-describedby="emailHelp"> -->
+    <!-- <button type="submit" class="btn btn-primary position-absolute top-180 start-50" value="submit">Submit</button> -->

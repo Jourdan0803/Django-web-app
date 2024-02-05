@@ -1,0 +1,70 @@
+{% extends 'layout.html' %}
+
+{% block content%}
+<div class="container">
+  <hr class="featurette-divider" style = "margin-top: 40px;">
+  <div class="card">
+    <div class="card-header text-center">
+        <h5 style = "margin-left: 10px; margin-top: 15px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16">
+                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
+                <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0M7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0"/>
+              </svg>
+              <span style = "margin-left: 10px;">My confirmed list</span> 
+        </h5>
+    </div>
+<table class="table" >
+    <thead>
+      <tr>
+        <th scope="col">Ride ID</th>
+        <th scope="col">Date</th>
+        <th scope="col">Departure time</th>
+        <th scope="col">Location</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Number of passengers</th>
+        <th scope="col">Ride status</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for obj in queryset %}
+        <tr>
+            <th scope="row"> {{obj.id}}</th>
+            <td>{{obj.date}}</td>
+            <td>{{obj.time}}</td>
+            <td>{{obj.location}}</td>
+            <td>{{obj.destination}}</td>
+            <td>{{obj.owner_num}}</td>
+            <td>
+              {%if obj.status == "open"%}
+              <button type="button" class="btn btn-success">
+                  {{obj.status}} <span class="badge text-bg-secondary"></span>
+                </button>
+              {% elif obj.status == "confirmed"%}
+              <button type="button" class="btn btn-success">
+                  {{obj.status}} <span class="badge text-bg-secondary"></span>
+                </button>
+              {% elif obj.status == "complete"%}
+                <button type="button" class="btn btn-secondary">{{obj.status}}
+                     <span class="badge text-bg-secondary"></span>
+                  </button>
+              {% endif %}
+            </td>
+            <td>
+              <a href="/driver/order/{{obj.id}}/info">
+                <button class="btn btn-dark btn-primary" type="button">View Details
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                    </svg>
+                </button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    
+  </table>
+
+
+    </div>
+{% endblock %}
