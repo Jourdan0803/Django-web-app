@@ -1,0 +1,297 @@
+2024-02-06 16:24:28,432 - django.request - WARNING - Not Found: /-log_response
+2024-02-06 16:25:37,426 - django.utils.autoreload - INFO - /code/polls/views.py changed, reloading.-trigger_reload
+2024-02-06 16:25:48,293 - polls.views - WARNING - wrong username or password-user_login
+2024-02-06 16:26:23,411 - django.utils.autoreload - INFO - /code/polls/views.py changed, reloading.-trigger_reload
+2024-02-06 16:26:30,832 - polls.views - WARNING - username already exist-user_create
+2024-02-06 16:26:56,238 - django.utils.autoreload - INFO - /code/polls/views.py changed, reloading.-trigger_reload
+2024-02-06 16:27:46,279 - django.utils.autoreload - INFO - /code/polls/views.py changed, reloading.-trigger_reload
+2024-02-06 16:28:01,838 - polls.views - WARNING - username already exist-user_profile
+2024-02-06 16:28:26,189 - polls.views - WARNING - username cannot be None-user_profile
+2024-02-06 16:28:28,846 - polls.views - WARNING - email cannot be None-user_profile
+2024-02-06 16:34:39,330 - django.utils.autoreload - INFO - /code/polls/views.py changed, reloading.-trigger_reload
+2024-02-06 16:35:02,999 - polls.views - WARNING - Email cannot be None-driver_profile
+2024-02-06 16:35:10,841 - django.request - ERROR - Internal Server Error: /driver/profile-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2112, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 209, in driver_profile
+    UserInfo.objects.filter(id = userid).update(driver_license = driver_license)
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1251, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1990, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1549, in execute_sql
+    sql, params = self.as_sql()
+                  ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1953, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 1019, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2119, in get_db_prep_value
+    value = super().get_db_prep_value(value, connection, prepared)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 1012, in get_db_prep_value
+    value = self.get_prep_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2114, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'driver_license' expected a number but got ''.
+2024-02-06 16:35:28,086 - django.request - ERROR - Internal Server Error: /driver/profile-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2112, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 209, in driver_profile
+    UserInfo.objects.filter(id = userid).update(driver_license = driver_license)
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1251, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1990, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1549, in execute_sql
+    sql, params = self.as_sql()
+                  ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1953, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 1019, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2119, in get_db_prep_value
+    value = super().get_db_prep_value(value, connection, prepared)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 1012, in get_db_prep_value
+    value = self.get_prep_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2114, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'driver_license' expected a number but got ''.
+2024-02-06 16:35:40,839 - django.request - ERROR - Internal Server Error: /driver/profile-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2112, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 209, in driver_profile
+    UserInfo.objects.filter(id = userid).update(driver_license = driver_license)
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1251, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1990, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1549, in execute_sql
+    sql, params = self.as_sql()
+                  ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1953, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 1019, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2119, in get_db_prep_value
+    value = super().get_db_prep_value(value, connection, prepared)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 1012, in get_db_prep_value
+    value = self.get_prep_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2114, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'driver_license' expected a number but got ''.
+2024-02-06 16:35:54,607 - django.request - ERROR - Internal Server Error: /driver/profile-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2112, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 209, in driver_profile
+    UserInfo.objects.filter(id = userid).update(driver_license = driver_license)
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1251, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1990, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1549, in execute_sql
+    sql, params = self.as_sql()
+                  ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1953, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 1019, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2119, in get_db_prep_value
+    value = super().get_db_prep_value(value, connection, prepared)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 1012, in get_db_prep_value
+    value = self.get_prep_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2114, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'driver_license' expected a number but got ''.
+2024-02-06 16:37:20,394 - django.utils.autoreload - INFO - /code/polls/views.py changed, reloading.-trigger_reload
+2024-02-06 16:37:25,099 - polls.views - WARNING - Email cannot be None-driver_profile
+2024-02-06 16:37:38,160 - django.utils.autoreload - INFO - /code/polls/views.py changed, reloading.-trigger_reload
+2024-02-06 16:38:02,330 - polls.views - WARNING - Email cannot be None-driver_profile
+2024-02-06 16:38:12,394 - django.request - ERROR - Internal Server Error: /driver/profile-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2112, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 217, in driver_profile
+    UserInfo.objects.filter(id = userid).update(seats_num = seats)
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1251, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1990, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1549, in execute_sql
+    sql, params = self.as_sql()
+                  ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1953, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 1019, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2119, in get_db_prep_value
+    value = super().get_db_prep_value(value, connection, prepared)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 1012, in get_db_prep_value
+    value = self.get_prep_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2114, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'seats_num' expected a number but got ''.
+2024-02-06 16:38:58,494 - django.utils.autoreload - INFO - /code/polls/views.py changed, reloading.-trigger_reload
+2024-02-06 16:39:00,069 - polls.views - WARNING - seats cannot be None-driver_profile
+2024-02-06 16:39:06,192 - django.utils.autoreload - INFO - /code/polls/views.py changed, reloading.-trigger_reload
+2024-02-06 16:39:08,783 - polls.views - WARNING - seats cannot be None-driver_profile
+2024-02-06 16:40:29,593 - django.utils.autoreload - INFO - /code/polls/views.py changed, reloading.-trigger_reload
+2024-02-06 16:40:45,287 - django.utils.autoreload - INFO - /code/polls/views.py changed, reloading.-trigger_reload
+2024-02-06 16:41:06,518 - polls.views - WARNING - Vehicle type cannot be None-driver_create
+2024-02-06 16:41:16,645 - polls.views - WARNING - Driver license cannot be None-driver_create
+2024-02-06 16:41:23,909 - polls.views - WARNING - seats number cannot be None-driver_create
+2024-02-06 16:41:57,554 - django.utils.autoreload - INFO - /code/polls/views.py changed, reloading.-trigger_reload
+2024-02-06 16:52:44,135 - django.utils.autoreload - INFO - /code/polls/views.py changed, reloading.-trigger_reload
+2024-02-06 16:53:28,759 - polls.views - WARNING - Loc cannot be None-user_order_info
+2024-02-06 16:53:28,785 - django.request - ERROR - Internal Server Error: /users/order/1/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 374, in user_order_info
+    return render(request,"user_order_info.html", {'username': ob.username, 'ob':ob, 'obj':obj,'error_meg0':"Location can not be none!"})
+                                                                                           ^^^
+UnboundLocalError: cannot access local variable 'obj' where it is not associated with a value
+2024-02-06 16:53:33,898 - polls.views - WARNING - Loc cannot be None-user_order_info
+2024-02-06 16:53:33,915 - django.request - ERROR - Internal Server Error: /users/order/1/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 374, in user_order_info
+    return render(request,"user_order_info.html", {'username': ob.username, 'ob':ob, 'obj':obj,'error_meg0':"Location can not be none!"})
+                                                                                           ^^^
+UnboundLocalError: cannot access local variable 'obj' where it is not associated with a value
+2024-02-06 16:54:14,499 - django.utils.autoreload - INFO - /code/polls/views.py changed, reloading.-trigger_reload
+2024-02-06 16:54:17,693 - django.request - ERROR - Internal Server Error: /users/order/1/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 374, in user_order_info
+    return render(request,"user_order_info.html", {'username': ob.username, 'ob':ob, 'obj':obj,'error_meg0':"Location can not be none!"})
+                                                                                           ^^^
+UnboundLocalError: cannot access local variable 'obj' where it is not associated with a value
+2024-02-06 16:55:03,587 - django.utils.autoreload - INFO - /code/polls/views.py changed, reloading.-trigger_reload
+2024-02-06 16:55:20,934 - polls.views - WARNING - Destnation cannot be None-user_order_info
+2024-02-06 16:55:26,419 - polls.views - WARNING - Destnation cannot be None-user_order_info
+2024-02-06 16:55:39,467 - django.utils.autoreload - INFO - /code/polls/views.py changed, reloading.-trigger_reload
+2024-02-06 16:56:46,725 - django.utils.autoreload - INFO - /code/polls/views.py changed, reloading.-trigger_reload
+2024-02-06 16:57:17,569 - django.utils.autoreload - INFO - /code/polls/views.py changed, reloading.-trigger_reload
+2024-02-06 16:59:04,104 - django.utils.autoreload - INFO - /code/polls/views.py changed, reloading.-trigger_reload
+2024-02-06 17:03:51,856 - polls.views - WARNING - wrong username or password-user_login
+2024-02-06 17:04:04,964 - polls.views - WARNING - Vehicle type cannot be None-driver_create
+2024-02-06 17:04:19,449 - polls.views - WARNING - username cannot be None-user_profile
+2024-02-06 17:04:28,049 - polls.views - WARNING - email cannot be None-user_profile
+2024-02-06 17:04:41,009 - polls.views - WARNING - Driver license cannot be None-driver_create
+2024-02-06 17:04:44,657 - polls.views - WARNING - seats number cannot be None-driver_create
+2024-02-06 17:05:02,573 - polls.views - WARNING - Driver license cannot be None-driver_profile
+2024-02-06 17:05:04,588 - polls.views - WARNING - seats cannot be None-driver_profile
+2024-02-06 17:08:44,496 - polls.views - WARNING - No match-driver_search
+2024-02-06 17:09:05,059 - polls.views - WARNING - No match-driver_search
+2024-02-06 17:09:17,680 - polls.views - WARNING - No match-driver_search
+2024-02-06 17:09:32,202 - polls.views - WARNING - No match-driver_search
+2024-02-06 17:09:36,243 - polls.views - WARNING - No match-driver_search
+2024-02-06 17:17:29,433 - polls.views - WARNING - No match-driver_search
