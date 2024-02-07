@@ -2,8 +2,7 @@
 python3 manage.py makemigrations
 python3 manage.py migrate
 chmod 777 ./token.json
-chmod 777 ./web-app/*.sh
-res="$?"
+chmod 777 ./web-app/*.sres="$?"
 while [ "$res" != "0" ]
 do
     sleep 3;
