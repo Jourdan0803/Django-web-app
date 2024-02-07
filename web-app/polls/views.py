@@ -11,12 +11,11 @@ from django.conf import settings
 from polls.utils.encrypt import md5
 from polls import quickstart
 
-# import logging
-# logging.basicConfig(filename='danger_log.txt',
-#     format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s-%(funcName)s',
-#     level=logging.INFO)
-# logger = logging.getLogger(__name__)
-
+import logging
+logging.basicConfig(filename='danger_log.txt',
+    format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s-%(funcName)s',
+    level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 def send_email(obj):
     send_mail(
