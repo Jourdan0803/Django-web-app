@@ -295,3 +295,677 @@ UnboundLocalError: cannot access local variable 'obj' where it is not associated
 2024-02-06 17:09:32,202 - polls.views - WARNING - No match-driver_search
 2024-02-06 17:09:36,243 - polls.views - WARNING - No match-driver_search
 2024-02-06 17:17:29,433 - polls.views - WARNING - No match-driver_search
+2024-02-06 17:32:31,599 - django.request - WARNING - Not Found: /-log_response
+2024-02-06 20:23:55,371 - polls.views - WARNING - wrong username or password-user_login
+2024-02-06 20:23:58,773 - polls.views - WARNING - wrong username or password-user_login
+2024-02-06 20:45:59,910 - django.utils.autoreload - INFO - /code/polls/views.py changed, reloading.-trigger_reload
+2024-02-06 20:50:31,518 - django.utils.autoreload - INFO - /code/mysite/urls.py changed, reloading.-trigger_reload
+2024-02-06 20:50:39,559 - django.utils.autoreload - INFO - /code/polls/middleware/auth.py changed, reloading.-trigger_reload
+2024-02-06 20:50:54,535 - polls.views - WARNING - username already exist-user_create
+2024-02-06 20:51:34,625 - polls.views - WARNING - wrong username or password-user_login
+2024-02-06 20:52:36,772 - django.request - ERROR - Internal Server Error: /driver/order/4/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 370, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 59, in gmail_authenticate
+    creds = flow.run_local_server(port=8000)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 432, in run_local_server
+    local_server = wsgiref.simple_server.make_server(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 154, in make_server
+    server = server_class((host, port), handler_class)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 50, in server_bind
+    HTTPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+2024-02-06 22:31:43,054 - django.request - ERROR - Internal Server Error: /driver/order/4/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 370, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 59, in gmail_authenticate
+    creds = flow.run_local_server(port=8000)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 432, in run_local_server
+    local_server = wsgiref.simple_server.make_server(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 154, in make_server
+    server = server_class((host, port), handler_class)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 50, in server_bind
+    HTTPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+2024-02-06 22:33:04,912 - django.utils.autoreload - INFO - /code/polls/views.py changed, reloading.-trigger_reload
+2024-02-06 22:33:21,215 - django.utils.autoreload - INFO - /code/polls/views.py changed, reloading.-trigger_reload
+2024-02-06 22:33:28,309 - django.utils.autoreload - INFO - /code/polls/views.py changed, reloading.-trigger_reload
+2024-02-06 22:34:29,162 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 59, in gmail_authenticate
+    creds = flow.run_local_server(port=8000)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 432, in run_local_server
+    local_server = wsgiref.simple_server.make_server(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 154, in make_server
+    server = server_class((host, port), handler_class)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 50, in server_bind
+    HTTPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+2024-02-06 22:36:38,024 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 59, in gmail_authenticate
+    creds = flow.run_local_server(port=8001)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 444, in run_local_server
+    webbrowser.get(browser).open(auth_url, new=1, autoraise=True)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/webbrowser.py", line 66, in get
+    raise Error("could not locate runnable browser")
+webbrowser.Error: could not locate runnable browser
+2024-02-06 22:36:47,278 - django.utils.autoreload - INFO - /code/polls/quickstart.py changed, reloading.-trigger_reload
+2024-02-06 22:36:50,751 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 59, in gmail_authenticate
+    creds = flow.run_local_server(port=8000)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 432, in run_local_server
+    local_server = wsgiref.simple_server.make_server(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 154, in make_server
+    server = server_class((host, port), handler_class)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 50, in server_bind
+    HTTPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+2024-02-06 22:40:19,975 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 59, in gmail_authenticate
+    creds = flow.run_local_server(port=8000)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 432, in run_local_server
+    local_server = wsgiref.simple_server.make_server(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 154, in make_server
+    server = server_class((host, port), handler_class)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 50, in server_bind
+    HTTPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+2024-02-06 22:42:02,473 - django.utils.autoreload - INFO - /code/polls/quickstart.py changed, reloading.-trigger_reload
+2024-02-06 22:42:06,871 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 55, in gmail_authenticate
+    flow = InstalledAppFlow.from_client_secrets_file(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 198, in from_client_secrets_file
+    with open(client_secrets_file, "r") as json_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'credentials.json'
+2024-02-06 22:42:16,641 - django.utils.autoreload - INFO - /code/polls/quickstart.py changed, reloading.-trigger_reload
+2024-02-06 22:42:19,841 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 59, in gmail_authenticate
+    creds = flow.run_local_server(port=8000)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 432, in run_local_server
+    local_server = wsgiref.simple_server.make_server(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 154, in make_server
+    server = server_class((host, port), handler_class)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 50, in server_bind
+    HTTPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+2024-02-06 22:44:09,774 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 59, in gmail_authenticate
+    creds = flow.run_local_server(port=8000)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 432, in run_local_server
+    local_server = wsgiref.simple_server.make_server(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 154, in make_server
+    server = server_class((host, port), handler_class)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 50, in server_bind
+    HTTPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+2024-02-06 22:54:50,272 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 59, in gmail_authenticate
+    creds = flow.run_local_server(port=8000)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 432, in run_local_server
+    local_server = wsgiref.simple_server.make_server(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 154, in make_server
+    server = server_class((host, port), handler_class)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 50, in server_bind
+    HTTPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+2024-02-06 22:56:12,265 - django.utils.autoreload - INFO - /code/polls/quickstart.py changed, reloading.-trigger_reload
+2024-02-06 22:56:19,281 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 60, in gmail_authenticate
+    creds = flow.run_local_server()
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 444, in run_local_server
+    webbrowser.get(browser).open(auth_url, new=1, autoraise=True)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/webbrowser.py", line 66, in get
+    raise Error("could not locate runnable browser")
+webbrowser.Error: could not locate runnable browser
+2024-02-06 22:57:09,866 - django.utils.autoreload - INFO - /code/polls/quickstart.py changed, reloading.-trigger_reload
+2024-02-06 22:57:15,891 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 55, in gmail_authenticate
+    flow = InstalledAppFlow.from_client_secrets_file(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 201, in from_client_secrets_file
+    return cls.from_client_config(client_config, scopes=scopes, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 168, in from_client_config
+    ) = google_auth_oauthlib.helpers.session_from_client_config(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/helpers.py", line 68, in session_from_client_config
+    session = requests_oauthlib.OAuth2Session(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/requests_oauthlib/oauth2_session.py", line 77, in __init__
+    super(OAuth2Session, self).__init__(**kwargs)
+TypeError: Session.__init__() got an unexpected keyword argument 'launch_browser'
+2024-02-06 22:57:54,440 - django.utils.autoreload - INFO - /code/polls/quickstart.py changed, reloading.-trigger_reload
+2024-02-06 22:57:59,714 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 55, in gmail_authenticate
+    flow = InstalledAppFlow.from_client_secrets_file(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 201, in from_client_secrets_file
+    return cls.from_client_config(client_config, scopes=scopes, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 168, in from_client_config
+    ) = google_auth_oauthlib.helpers.session_from_client_config(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/helpers.py", line 68, in session_from_client_config
+    session = requests_oauthlib.OAuth2Session(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/requests_oauthlib/oauth2_session.py", line 77, in __init__
+    super(OAuth2Session, self).__init__(**kwargs)
+TypeError: Session.__init__() got an unexpected keyword argument 'launch_browser'
+2024-02-06 22:58:12,579 - django.utils.autoreload - INFO - /code/polls/quickstart.py changed, reloading.-trigger_reload
+2024-02-06 22:58:46,827 - django.utils.autoreload - INFO - /code/polls/quickstart.py changed, reloading.-trigger_reload
+2024-02-06 22:58:51,728 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 60, in gmail_authenticate
+    creds = flow.run_local_server()
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 444, in run_local_server
+    webbrowser.get(browser).open(auth_url, new=1, autoraise=True)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/webbrowser.py", line 66, in get
+    raise Error("could not locate runnable browser")
+webbrowser.Error: could not locate runnable browser
+2024-02-06 22:59:01,942 - django.utils.autoreload - INFO - /code/polls/quickstart.py changed, reloading.-trigger_reload
+2024-02-06 22:59:03,987 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 60, in gmail_authenticate
+    creds = flow.run_local_server(port=7000)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 444, in run_local_server
+    webbrowser.get(browser).open(auth_url, new=1, autoraise=True)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/webbrowser.py", line 66, in get
+    raise Error("could not locate runnable browser")
+webbrowser.Error: could not locate runnable browser
+2024-02-06 22:59:11,110 - django.utils.autoreload - INFO - /code/polls/quickstart.py changed, reloading.-trigger_reload
+2024-02-06 22:59:13,888 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 60, in gmail_authenticate
+    creds = flow.run_local_server(port=8000)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 432, in run_local_server
+    local_server = wsgiref.simple_server.make_server(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 154, in make_server
+    server = server_class((host, port), handler_class)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 50, in server_bind
+    HTTPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+2024-02-06 23:00:18,715 - django.utils.autoreload - INFO - /code/polls/quickstart.py changed, reloading.-trigger_reload
+2024-02-06 23:00:21,600 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 60, in gmail_authenticate
+    creds = flow.run_console()
+            ^^^^^^^^^^^^^^^^
+AttributeError: 'InstalledAppFlow' object has no attribute 'run_console'
+2024-02-06 23:00:32,792 - django.utils.autoreload - INFO - /code/polls/quickstart.py changed, reloading.-trigger_reload
+2024-02-06 23:00:36,686 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 59, in gmail_authenticate
+    creds = flow.run_local_server(port=8000)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 432, in run_local_server
+    local_server = wsgiref.simple_server.make_server(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 154, in make_server
+    server = server_class((host, port), handler_class)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 50, in server_bind
+    HTTPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+2024-02-06 23:00:45,765 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 59, in gmail_authenticate
+    creds = flow.run_local_server(port=8000)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 432, in run_local_server
+    local_server = wsgiref.simple_server.make_server(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 154, in make_server
+    server = server_class((host, port), handler_class)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 50, in server_bind
+    HTTPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+2024-02-06 23:02:27,471 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 59, in gmail_authenticate
+    creds = flow.run_local_server(port=8000)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 432, in run_local_server
+    local_server = wsgiref.simple_server.make_server(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 154, in make_server
+    server = server_class((host, port), handler_class)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 50, in server_bind
+    HTTPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+2024-02-06 23:06:28,727 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 59, in gmail_authenticate
+    creds = flow.run_local_server(port=8000)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 432, in run_local_server
+    local_server = wsgiref.simple_server.make_server(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 154, in make_server
+    server = server_class((host, port), handler_class)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 50, in server_bind
+    HTTPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+2024-02-06 23:20:39,345 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 59, in gmail_authenticate
+    creds = flow.run_local_server(port=8000)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 432, in run_local_server
+    local_server = wsgiref.simple_server.make_server(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 154, in make_server
+    server = server_class((host, port), handler_class)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 50, in server_bind
+    HTTPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+2024-02-07 00:10:29,480 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 59, in gmail_authenticate
+    creds = flow.run_local_server(port=8000)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 432, in run_local_server
+    local_server = wsgiref.simple_server.make_server(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 154, in make_server
+    server = server_class((host, port), handler_class)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "/usr/local/lib/python3.12/wsgiref/simple_server.py", line 50, in server_bind
+    HTTPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+2024-02-07 01:48:20,769 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 59, in gmail_authenticate
+    creds = flow.run_local_server(port=8001)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google_auth_oauthlib/flow.py", line 444, in run_local_server
+    webbrowser.get(browser).open(auth_url, new=1, autoraise=True)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/webbrowser.py", line 66, in get
+    raise Error("could not locate runnable browser")
+webbrowser.Error: could not locate runnable browser
+2024-02-07 01:50:37,502 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 62, in gmail_authenticate
+    with open('token.json', 'w') as token:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'token.json'
+2024-02-07 01:50:41,162 - django.request - ERROR - Internal Server Error: /driver/order/5/info-log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/views.py", line 369, in driver_order_info
+    service = quickstart.gmail_authenticate()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/polls/quickstart.py", line 62, in gmail_authenticate
+    with open('token.json', 'w') as token:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'token.json'
+2024-02-07 01:51:38,575 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0-autodetect

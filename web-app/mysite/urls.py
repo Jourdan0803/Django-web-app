@@ -40,4 +40,5 @@ urlpatterns = [
     path("users/list", views.user_list),
     path("users/share/search", views.sharer_search),
     path("users/share/order/<int:nid>/<int:passengers>/info", views.user_share_order_info),
+    path("", views.start),
 ]

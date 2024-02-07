@@ -13,5 +13,5 @@ class Auth(MiddlewareMixin):
             info = request.session.get("info")
             if info:
                 return
-            return redirect('/start/')
+            # return redirect('/start/')
         

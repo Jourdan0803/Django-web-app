@@ -9,6 +9,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 
 from polls.utils.encrypt import md5
+from polls import quickstart
 
 import logging
 logging.basicConfig(filename='danger_log.txt',
@@ -342,6 +343,18 @@ def driver_search(request):
         return render(request,"driver_search.html",{'username': ob.username,'ob':ob, 'no_result':"No matched result find"})
     return render(request,"driver_search.html",{'username': ob.username,'ob':ob, 'queryset':queryset})
 
+# def driver_order_info(request, nid):
+#     ob = get_obj(request)
+#     if request.method == "GET":  
+#         obj = models.OrderInfo.objects.filter(id=nid).first() 
+#         return render(request, "driver_order_info.html", {'username': ob.username, 'ob':ob, 'obj':obj})
+#     if request.method == "POST":
+#         obj = models.OrderInfo.objects.filter(id=nid)
+#         if 'confirm' in request.POST:  
+#             obj.update(is_confirm=True, status = "confirmed", driver=ob.username, seats_num=ob.seats_num)
+#         if 'complete' in request.POST: 
+#             obj.update(status = "complete")
+#         return redirect("/driver/list")
 def driver_order_info(request, nid):
     ob = get_obj(request)
     if request.method == "GET":  
@@ -349,7 +362,14 @@ def driver_order_info(request, nid):
         return render(request, "driver_order_info.html", {'username': ob.username, 'ob':ob, 'obj':obj})
     if request.method == "POST":
         obj = models.OrderInfo.objects.filter(id=nid)
-        if 'confirm' in request.POST:  
+        obj_email = models.OrderInfo.objects.filter(id=nid).first()
+        if 'confirm' in request.POST: 
+            sharer1 = models.UserInfo.objects.filter(username = obj_email.order_owner).first()
+            sharer2 = models.UserInfo.objects.filter(username = obj_email.share_user).first()
+            service = quickstart.gmail_authenticate()
+            quickstart.send_message(service, "jourdan.ljxx@gmail.com", sharer1.email, "Confirm email from Wego", "<h1>Your ride has been confirmed by a driver</h1>")
+            if sharer2:
+                quickstart.send_message(service, "jourdan.ljxx@gmail.com", sharer2.email, "Confirm email from Wego", "<h1>Your ride has been confirmed by a driver</h1>")
             obj.update(is_confirm=True, status = "confirmed", driver=ob.username, seats_num=ob.seats_num)
         if 'complete' in request.POST: 
             obj.update(status = "complete")
