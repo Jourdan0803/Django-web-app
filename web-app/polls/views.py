@@ -227,7 +227,12 @@ def driver_profile(request):
             info = "None"
         UserInfo.objects.filter(id = userid).update(special_info = info)
         obnew = UserInfo.objects.filter(id = userid).first()
+        
         return render(request,"driver_profile.html", {'username': obnew.username, 'ob':obnew, 'meg4':"Edit special information successfully!"})
+    
+    if 'cancel' in request.POST:
+        UserInfo.objects.filter(id = userid).update(is_driver = 0, vehicle_type = "",driver_license = 000000000,seats_num = 0, special_info = "")
+        return redirect('/users/profile')
     return render(request,"driver_profile.html", {'username': ob.username, 'ob':ob})
 
 
