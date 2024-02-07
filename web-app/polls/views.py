@@ -17,6 +17,7 @@ from polls import quickstart
 #     level=logging.INFO)
 # logger = logging.getLogger(__name__)
 
+
 def send_email(obj):
     send_mail(
         "Subject here",
