@@ -11,11 +11,11 @@ from django.conf import settings
 from polls.utils.encrypt import md5
 from polls import quickstart
 
-import logging
-logging.basicConfig(filename='danger_log.txt',
-    format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s-%(funcName)s',
-    level=logging.INFO)
-logger = logging.getLogger(__name__)
+# import logging
+# logging.basicConfig(filename='danger_log.txt',
+#     format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s-%(funcName)s',
+#     level=logging.INFO)
+# logger = logging.getLogger(__name__)
 
 def send_email(obj):
     send_mail(
@@ -92,7 +92,7 @@ def user_login(request):
     if form.is_valid():
         admin_object = models.UserInfo.objects.filter(**form.cleaned_data).first()
         if not admin_object:
-            logger.warning("wrong username or password")
+            # logger.warning("wrong username or password")
             form.add_error("password", "wrong username or password")
             return render(request,"user_login.html", {'form':form})
         request.session["info"] = {'id': admin_object.id, 'name': admin_object.username, 'is_driver':admin_object.is_driver}
@@ -112,7 +112,7 @@ def user_create(request):
         email = form1.cleaned_data.get('email')
         exist = UserInfo.objects.filter(username = user).exists()
         if exist:
-            logger.warning("username already exist")
+            # logger.warning("username already exist")
             form1.add_error("username", "username already exists")
             return render(request,"user_create.html", {'form':form1})
         UserInfo.objects.create(username = user, password = pwd, email = email)
@@ -151,10 +151,10 @@ def user_profile(request):
         name = request.POST.get("username")
         exist = UserInfo.objects.filter(username = name).exists()
         if not name:
-            logger.warning("username cannot be None")
+            # logger.warning("username cannot be None")
             return render(request,"user_profile.html", {'username': ob.username, 'ob':ob, 'error_meg':"Username can not be none!"})
         if exist:
-            logger.warning("username already exist")
+            # logger.warning("username already exist")
             return render(request,"user_profile.html", {'username': ob.username, 'ob':ob, 'error_meg':"Username already exist!"})
         UserInfo.objects.filter(id = userid).update(username = name)
         obnew = UserInfo.objects.filter(id = userid).first()
@@ -181,10 +181,10 @@ def driver_profile(request):
         name = request.POST.get("username")
         exist = UserInfo.objects.filter(username = name).exists()
         if not name:
-            logger.warning("username cannot be None")
+            # logger.warning("username cannot be None")
             return render(request,"driver_profile.html", {'username': ob.username, 'ob':ob,'error_meg':"Username can not be none!"})
         if exist:
-            logger.warning("username already exist")
+            # logger.warning("username already exist")
             return render(request,"driver_profile.html", {'username': ob.username, 'ob':ob, 'error_meg':"Username already exist!"})
         UserInfo.objects.filter(id = userid).update(username = name)
         obnew = UserInfo.objects.filter(id = userid).first()
@@ -192,7 +192,7 @@ def driver_profile(request):
     if 'edit_email' in request.POST:
         email = request.POST.get("email")
         if not email:
-            logger.warning("Email cannot be None")
+            # logger.warning("Email cannot be None")
             return render(request,"driver_profile.html", {'username': ob.username, 'ob':ob,'error_meg3':"Email can not be none!"})
         UserInfo.objects.filter(id = userid).update(email = email)
         obnew = UserInfo.objects.filter(id = userid).first()
@@ -200,7 +200,7 @@ def driver_profile(request):
     if 'edit_vehicle_type' in request.POST:
         vehicle_type = request.POST.get("type")
         if vehicle_type == "Choose your vehicle type":
-            logger.warning("Vehicle type cannot be None")
+            # logger.warning("Vehicle type cannot be None")
             return render(request,"driver_profile.html", {'username': ob.username, 'ob':ob, 'error_meg1':"Please choose a vehicle type!"})
         UserInfo.objects.filter(id = userid).update(vehicle_type = vehicle_type)
         obnew = UserInfo.objects.filter(id = userid).first()
@@ -208,7 +208,7 @@ def driver_profile(request):
     if 'edit_driver_license' in request.POST:
         driver_license = request.POST.get("license")
         if not driver_license:
-            logger.warning("Driver license cannot be None")
+            # logger.warning("Driver license cannot be None")
             return render(request,"driver_profile.html", {'username': ob.username, 'ob':ob,'error_meg4':"Driver license can not be none!"})
         UserInfo.objects.filter(id = userid).update(driver_license = driver_license)
         obnew = UserInfo.objects.filter(id = userid).first()
@@ -216,7 +216,7 @@ def driver_profile(request):
     if 'edit_seats_num' in request.POST:
         seats = request.POST.get("seats")
         if not seats:
-            logger.warning("seats cannot be None")
+            # logger.warning("seats cannot be None")
             return render(request,"driver_profile.html", {'username': ob.username, 'ob':ob,'error_meg5':"Seats number can not be none!"})
         UserInfo.objects.filter(id = userid).update(seats_num = seats)
         obnew = UserInfo.objects.filter(id = userid).first()
@@ -249,13 +249,13 @@ def driver_create(request):
     seats = request.POST.get("seats")
     info = request.POST.get("info")
     if vehicle_type == "Please choose your vehicle type":
-        logger.warning("Vehicle type cannot be None")
+        # logger.warning("Vehicle type cannot be None")
         return render(request,"driver_create.html", {'username': ob.username, 'ob':ob, 'error_meg':"Please choose a vehicle type!"})
     if not driver_license:
-        logger.warning("Driver license cannot be None")
+        # logger.warning("Driver license cannot be None")
         return render(request,"driver_create.html", {'username': ob.username, 'ob':ob, 'error_meg1':"Driver license can not be empty"})
     if not seats:
-        logger.warning("seats number cannot be None")
+        # logger.warning("seats number cannot be None")
         return render(request,"driver_create.html", {'username': ob.username, 'ob':ob, 'error_meg2':"seats number can not be empty"})
     ob = UserInfo.objects.filter(id = ob.id).update(is_driver=1,driver_license = driver_license,special_info = info, seats_num = seats, vehicle_type = vehicle_type)
     return redirect('/driver/home')
@@ -313,10 +313,10 @@ def take_ride(request):
             info = "None"
         print(info)
         if vehicle_type == "Choose your vehicle type":
-            logger.warning("Vehicle type cannot be None")
+            # logger.warning("Vehicle type cannot be None")
             return render(request,"take_ride.html", {'username': ob.username, 'ob':ob, 'error_meg':"Please choose a vehicle type!"})
         if is_share == "Choose Your answer":
-            logger.warning("Share cannot be None")
+            # logger.warning("Share cannot be None")
             return render(request,"take_ride.html", {'username': ob.username, 'ob':ob, 'error_meg1':"Please make your decision!"})
 
         order_id = form.save().id
@@ -336,15 +336,15 @@ def driver_search(request):
     if not info:
         info = "None"
     if v_type == "Please choose your vehicle type":
-        logger.warning("Vehicle type cannot be None")
+        # logger.warning("Vehicle type cannot be None")
         return render(request,"driver_search.html", {'username': ob.username, 'ob':ob, 'error_meg':"Please choose a vehicle type!"})
     if not seats:
-        logger.warning("Seats cannot be None")
+        # logger.warning("Seats cannot be None")
         return render(request,"driver_search.html", {'username': ob.username, 'ob':ob, 'error_meg1':"seats number can not be empty"})
     #ob = UserInfo.objects.filter(id = ob.id).update(is_driver=1,driver_license = driver_license,special_info = info, seats_num = seats, vehicle_type = vehicle_type)
     queryset = models.OrderInfo.objects.filter(vehicle_type = v_type, is_confirm = False, owner_num__lte = seats, info = info).exclude(order_owner = ob.username)
     if not queryset:
-        logger.warning("No match")
+        # logger.warning("No match")
         return render(request,"driver_search.html",{'username': ob.username,'ob':ob, 'no_result':"No matched result find"})
     return render(request,"driver_search.html",{'username': ob.username,'ob':ob, 'queryset':queryset})
 
