@@ -1,39 +1,43 @@
 # Django Web-App
-Duke ECE 568: Engineering Robust Server Software HW1. It can be used as a template for Django web project.
+A versatile Django-based web application to streamline ride sharing and management. The platform supports multiple user roles (Ride Owner, Ride Driver, Ride Sharer) and complex functionalities, showcasing full-stack development expertise.
 
-⛳ This web-app assembles Uber, which lets users request, drive for, and join rides. It has three roles: Passenger, Driver, and Manager. The functionalities include:
+⛳ This web-app assembles Uber, which lets users request, drive for, and join rides. It has three roles: ride owner, Driver, and ride sharer. Integrated advanced functionalities like account creation, login/logout, and role-specific actions, catering to the diverse needs of each user type within the platform. The functionalities include:
 
 - **Create Account**
 - **Login/Logout**
+- **Handle login failure**
 - **Driver Registration**
+- **view and edit their driver status as well as personal & vehicle**
 - **Ride Selection**
 - **Ride Requesting**
-- **Ride Request Editing (Owner)**
+- **Ride Request Editing (Owner / sharer)**
 - **Ride Request Viewing (Owner / Sharer)**
 - **Ride Status Viewing (Driver)**
 - **Ride Searching (Driver)**
 - **Ride Searching (Sharer)**
-- **And some other unlist features...**
+- **See comfirmed list(Driver)**
+- **View all of the ride details(Owner)**
+- **Edit a confirmed ride to complete(Driver)**
 
 
-![](img/1.png)
+![](img/1.jpeg)
 
 **💠 Now enjoy this project!**
 
 ## Demo
 ### 1. Register
-![](assets/img/demo%20(2).png)
-![](assets/img/demo%20(3).png)
+![](img/3.jpeg)
 
-### 2. Login
-![](assets/img/demo%20(1).png)
+### 2. Login(including login failure handling)
+![](img/2.jpeg)
+![](img/4.jpeg)
 
 ### 3. Home Page
-![](assets/img/demo%20(4).png)
-
-### 4. Search
-![](assets/img/demo%20(5).png)
-![](assets/img/demo%20(6).png)
+In the top of home page, I am using a carousel to show the pictures with entrance to some main functions.
+![](img/gif.gif)
+### 4. Driver 
+![](img/8.jpeg)
+![](img/9.jpeg)
 
 ### 5. Edit Profile
 ![](assets/img/demo%20(7).png)
