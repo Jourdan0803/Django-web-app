@@ -90,5 +90,5 @@ can mark as complete
 
 
 ## Contribution
-**🔱 Developed by Jourdan.**
+**🔱 Developed by Jourdan. jourdan.ljxx@gmail.com**
 
