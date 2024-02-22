@@ -38,7 +38,10 @@ including login failure handling
 ### 3. Home Page
 In the top of home page, I am using a carousel to show the pictures with entrance to some main functions.
 
-![](img/gif.gif)
+<div align="center">
+  <img src="img/gif.gif" alt="h">
+</div>
+
 ### 4. Driver register page
 if already registered, redirect to driver home
 
