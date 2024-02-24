@@ -90,8 +90,65 @@ can mark as complete
 ![](img/24.jpeg)
 ![](img/25.jpeg)
 
+## Usage Instruction
+
+### Docker
+
+In order for easier setting up, you can use the provide Docker setting.
+
+```
+git clone git@github.com:MorganeLu/Django-web-app.git
+cd Django-web-app
+cd erss-hwk1-kl461-jl1226
+sudo docker-compose up
+```
+
+Just wait for a second, you can see visit our website by localhost:8000.
+
+### Local Machine
+
+If you prefer to run this demo on your own personal computer, you can set it up by following the instructions below.
+
+```
+git clone git@github.com:MorganeLu/Django-web-app.git
+cd Django-web-app
+```
+
+After that you have to set up your own database by using Postgres.
+
+```
+sudo su - postgres
+psql
+CREATE user brian;   //replace brian with your username. note the ';' at the end
+ALTER USER brian CREATEDB;    //again, replace brian with your user name. note the ';' at the end
+exit postgres (by pressing Ctrl+D)
+exit the su'ed shell
+createdb nameOfDB   //replace nameOfDB with a meaningful name for your project
+```
+
+Find file `pg_hba.conf` in your system and edit as follows
+```
+sudo vi /etc/postgresql/10/main/pg_hba.conf`
+```
+
+– Change this line:
+local all postgres peer
+– To:
+local all postgres md5
+
+```
+sudo service postgresql restart
+```
+
+In the end, just run:
+
+```
+runserver 0.0.0.0:8080
+```
+
+And visit the website at localhost:8000! 
 
 
 ## Contribution
-**🔱 Developed by Jourdan. jourdan.ljxx@gmail.com**
+**🔱 Developed by Jourdan. jourdan.ljxx@gmail.com and Kaixin Lu kaixin.lu@duke.edu**
 
