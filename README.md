@@ -150,5 +150,5 @@ And visit the website at localhost:8000!
 
 
 ## Contribution
-**🔱 Developed by Jourdan. jourdan.ljxx@gmail.com and Kaixin Lu kaixin.lu@duke.edu**
+**🔱 Developed by Jingxuan li. jourdan.ljxx@gmail.com and Kaixin Lu kaixin.lu@duke.edu**
 
