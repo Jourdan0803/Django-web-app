@@ -1,4 +1,7 @@
 # Django Web-App
+<div align="center">
+  <img src="img/gif.gif" alt="h">
+</div>
 A versatile Django-based web application to streamline ride sharing and management. The platform supports multiple user roles (Ride Owner, Ride Driver, Ride Sharer) and complex functionalities, showcasing full-stack development expertise.
 
 ⛳ This web-app assembles Uber, which lets users request, drive for, and join rides. It has three roles: ride owner, Driver, and ride sharer. Integrated advanced functionalities like account creation, login/logout, and role-specific actions, catering to the diverse needs of each user type within the platform. The functionalities include:
