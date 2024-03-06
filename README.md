@@ -1,4 +1,4 @@
-# Full-Stack Mini Uber-Django Web-App
+# Full-Stack Mini Uber----Django Web-App
 <div align="center">
   <img src="img/gif.gif" alt="h">
 </div>
